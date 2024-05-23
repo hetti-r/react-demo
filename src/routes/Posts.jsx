@@ -7,7 +7,7 @@ const Posts = ({ posts, setPublishedStatus }) => {
                     <p>Date: {post.date}</p>
                     <p>{post.content}</p>
                     <p>
-                        <strong>Status:</strong> {post.published ? "Published" : "unPublished"}
+                        {post.published ? "Published" : " Not Published"}
                         <br />
                         <button onClick={() => setPublishedStatus(post.id, post.published)}>
                             {post.published ? "UnPublish" : "Publish"}

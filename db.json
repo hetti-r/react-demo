@@ -13,7 +13,7 @@
       "title": "Second Post",
       "author": "Jane Smith",
       "content": "This is the second post content.",
-      "published": true,
+      "published": false,
       "date": "2024-05-11"
     },
     {
