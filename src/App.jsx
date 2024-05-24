@@ -41,16 +41,16 @@ function App() {
   }, []);
 
 
-  const setPublishedStatus = (id, published) => {
+  const setPublishedStatus = (id, togglePub) => {
     const findPost = posts.find((post) => post.id === id); //find post by id
-    const updateStatus = { ...findPost, published: !published }; //combine found post with changed published boolean status in a new object
+    const updateStatus = { ...findPost, published: !togglePub }; //combine found post with toggleable published boolean status in a new object
 
     axios
       .put(`http://localhost:3000/posts/${id}`, updateStatus) //axios updates published status to a post by id
       .then((res) => {
         setPosts(
           posts.map((post) =>
-            post.id === id ? { ...post, published: !published } : post //go through posts, if id found then go into post object and change published status
+            post.id === id ? { ...post, published: !togglePub } : post //go through posts, if id found then go into post object and toggle published status
           )
         );
       })
@@ -68,7 +68,7 @@ function App() {
         { path: '/', element: <Home /> },
         { path: '/about', element: <About /> },
         { path: '/users', element: <Users users={users} /> },
-        { path: '/posts', element: <Posts posts={posts} setPublishedStatus={setPublishedStatus} /> },
+        { path: '/posts', element: <Posts posts={posts} setPublishedStatus={setPublishedStatus} /> }, //pass posts and toggle to Posts
         { path: '/persons', element: <Persons persons={persons} /> },
       ],
     },

@@ -5,7 +5,7 @@
       "title": "First Post",
       "author": "John Doe",
       "content": "This is the first post content.",
-      "published": true,
+      "published": false,
       "date": "2024-05-10"
     },
     {
@@ -21,7 +21,7 @@
       "title": "Third Post",
       "author": "Alice Johnson",
       "content": "This is the third post content.",
-      "published": false,
+      "published": true,
       "date": "2024-05-12"
     }
   ]
